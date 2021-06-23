@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ae5-9j-eKV">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18122"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Notification Check Table View Controller-->
+        <scene sceneID="VTL-KM-t08">
+            <objects>
+                <tableViewController id="Ae5-9j-eKV" customClass="TSUserNotificationCheckTableViewController" customModule="TSUserNotifications" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lrh-4Z-Eod">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationCheckTableViewCell" rowHeight="62" id="MuA-ST-T69" customClass="TSUserNotificationCheckTableViewCell" customModule="TSUserNotifications" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="62"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MuA-ST-T69" id="UQh-Go-wqo">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWt-9m-Bw5">
+                                            <rect key="frame" x="22" y="10" width="8" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018년 2월 20일 (수요일) 11:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfL-pt-59z">
+                                            <rect key="frame" x="40" y="10" width="354" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="알림 문구" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHB-np-AqC">
+                                            <rect key="frame" x="40" y="35.5" width="354" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pHB-np-AqC" firstAttribute="top" secondItem="mfL-pt-59z" secondAttribute="bottom" constant="5" id="3sb-nc-RRO"/>
+                                        <constraint firstAttribute="bottom" secondItem="pHB-np-AqC" secondAttribute="bottom" constant="5" id="Alg-9F-iab"/>
+                                        <constraint firstItem="nWt-9m-Bw5" firstAttribute="centerY" secondItem="mfL-pt-59z" secondAttribute="centerY" id="S1z-RM-kaZ"/>
+                                        <constraint firstItem="mfL-pt-59z" firstAttribute="top" secondItem="UQh-Go-wqo" secondAttribute="top" constant="10" id="b6G-LR-ocy"/>
+                                        <constraint firstItem="pHB-np-AqC" firstAttribute="leading" secondItem="UQh-Go-wqo" secondAttribute="leading" constant="40" id="eMU-Yi-XeS"/>
+                                        <constraint firstItem="mfL-pt-59z" firstAttribute="leading" secondItem="nWt-9m-Bw5" secondAttribute="trailing" constant="10" id="muz-G1-EOE"/>
+                                        <constraint firstAttribute="trailing" secondItem="mfL-pt-59z" secondAttribute="trailing" constant="20" id="qLL-0B-vlZ"/>
+                                        <constraint firstItem="mfL-pt-59z" firstAttribute="leading" secondItem="UQh-Go-wqo" secondAttribute="leading" constant="40" id="rSM-rO-jve"/>
+                                        <constraint firstAttribute="trailing" secondItem="pHB-np-AqC" secondAttribute="trailing" constant="20" id="t1f-9w-ch1"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="messageLabel" destination="pHB-np-AqC" id="xmy-mC-q1d"/>
+                                    <outlet property="numberLabel" destination="nWt-9m-Bw5" id="C37-cD-S6e"/>
+                                    <outlet property="timeLabel" destination="mfL-pt-59z" id="tkd-83-pTA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ae5-9j-eKV" id="Lcx-DX-Y2Q"/>
+                            <outlet property="delegate" destination="Ae5-9j-eKV" id="Lit-os-rP6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="bQv-Jy-uIE">
+                        <barButtonItem key="rightBarButtonItem" title="Remove" id="ucj-6X-vp1">
+                            <connections>
+                                <action selector="removeAll:" destination="Ae5-9j-eKV" id="Z6P-ED-xNJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Oz-b7-8fr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="143" y="220"/>
+        </scene>
+    </scenes>
+</document>

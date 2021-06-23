@@ -1,0 +1,6 @@
+framework module TSUserNotifications {
+  umbrella header "TSUserNotifications-umbrella.h"
+
+  export *
+  module * { export * }
+}

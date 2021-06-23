@@ -1,0 +1,16 @@
+PODS:
+  - TSUserNotifications (0.1.0)
+
+DEPENDENCIES:
+  - TSUserNotifications (from `../`)
+
+EXTERNAL SOURCES:
+  TSUserNotifications:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TSUserNotifications: 57ce7df8b85ed30869a30dacaa997e970bb7c032
+
+PODFILE CHECKSUM: 17a0c5f975de5ad5ac8a82a81c4696213d2967eb
+
+COCOAPODS: 1.10.1
