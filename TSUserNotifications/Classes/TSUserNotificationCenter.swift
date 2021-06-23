@@ -26,7 +26,7 @@ public enum TSUserNotificationDayOfTheWeek: Int {
     case saturday
 }
 
-final class TSUserNofitactionFireDate {
+final public class TSUserNofitactionFireDate {
     private var year: Int?
     private var month: Int?
     private var day: Int?
@@ -82,8 +82,12 @@ private extension TSUserNofitactionFireDate {
 }
 
 public class TSUserNotificationCenter {
+}
+
+// MARK: - Public
+public extension TSUserNotificationCenter {
     @discardableResult
-    public static func set(identifier: String = UUID().uuidString,
+    static func set(identifier: String = UUID().uuidString,
                     date: Date?,
                     repeatType: TSUserNotificationRepeatType = .none,
                     title: String? = nil,
