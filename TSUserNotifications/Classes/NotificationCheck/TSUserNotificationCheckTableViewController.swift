@@ -91,14 +91,16 @@ private extension TSUserNotificationCheckTableViewController {
                             repeatDay = "매년"
                         }
                     }
-                    self.setup(threadIdentifier: request.content.threadIdentifier,
+                    self.setup(identifier: request.identifier,
+                               threadIdentifier: request.content.threadIdentifier,
                                fireDate: trigger.nextTriggerDate(),
                                alertTitle: request.content.title,
                                alertBody: request.content.body,
                                repeatDay: repeatDay)
                 } else if let trigger = request.trigger as? UNTimeIntervalNotificationTrigger {
                     let repeatDay: String? = trigger.repeats ? "반복 \(trigger.timeInterval)" : nil
-                    self.setup(threadIdentifier: request.content.threadIdentifier,
+                    self.setup(identifier: request.identifier,
+                               threadIdentifier: request.content.threadIdentifier,
                                fireDate: trigger.nextTriggerDate(),
                                alertTitle: request.content.title,
                                alertBody: request.content.body,
@@ -117,19 +119,24 @@ private extension TSUserNotificationCheckTableViewController {
         title = "PendingNoti (\(notifications.count))"
     }
     
-    func setup(threadIdentifier: String?, fireDate: Date?, alertTitle: String?, alertBody: String?, repeatDay: String?) {
+    func setup(identifier: String, threadIdentifier: String?, fireDate: Date?, alertTitle: String?, alertBody: String?, repeatDay: String?) {
+        var compareIdentifier: String
+        if let threadIdentifier = threadIdentifier, !threadIdentifier.isEmpty {
+            compareIdentifier = threadIdentifier
+        } else {
+            compareIdentifier = "none"
+        }
         let notification: TSUserNotificationInfo
-        if let tmp = notifications.filter({ return $0.threadIdentifier == threadIdentifier}).first {
+        if let tmp = notifications.filter({ $0.threadIdentifier == compareIdentifier }).first {
             notification = tmp
         } else {
             notification = TSUserNotificationInfo()
             notifications.append(notification)
-            if let threadIdentifier = threadIdentifier, !threadIdentifier.isEmpty {
-                notification.threadIdentifier = threadIdentifier
-            }
+            notification.threadIdentifier = compareIdentifier
         }
         
         let detail = TSUserNotificationInfoDetail()
+        detail.identifier = identifier
         if let fireDate = fireDate {
             detail.date = fireDate
         }

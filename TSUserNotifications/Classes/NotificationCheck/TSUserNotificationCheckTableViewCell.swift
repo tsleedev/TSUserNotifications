@@ -30,6 +30,9 @@ class TSUserNotificationCheckTableViewCell: UITableViewCell {
             }
             timeLabel.text = timeString
             var message: String = ""
+            if !detail.identifier.isEmpty {
+                message += detail.identifier + "\n"
+            }
             if !detail.title.isEmpty {
                 message += detail.title + "\n"
             }

@@ -13,6 +13,7 @@ class TSUserNotificationInfo {
 }
 
 class TSUserNotificationInfoDetail: NSObject {
+    var identifier: String = ""
     var date: Date = Date()
     var title: String = ""
     var key: String = ""

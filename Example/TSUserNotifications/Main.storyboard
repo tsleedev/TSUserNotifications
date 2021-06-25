@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +12,7 @@
         <!--WEEK-->
         <scene sceneID="VgW-mi-fhw">
             <objects>
-                <tableViewController id="1Cu-D7-pUU" customClass="NotificationWeekTableViewController" customModule="LocalNotification" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="1Cu-D7-pUU" customClass="NotificationWeekTableViewController" customModule="TSUserNotifications_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yzf-Ku-LWv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,12 +179,46 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dV1-x6-s6V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1835" y="865"/>
+            <point key="canvasLocation" x="1048" y="877"/>
+        </scene>
+        <!--TASKS-->
+        <scene sceneID="eS0-HZ-oeM">
+            <objects>
+                <viewController id="hL3-It-qBX" customClass="NotificationTasksViewController" customModule="TSUserNotifications_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n06-ce-akd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In NotificationTasksViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrY-fL-bdF">
+                                <rect key="frame" x="77.5" y="437.5" width="259" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Mb9-W1-g06"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NrY-fL-bdF" firstAttribute="centerY" secondItem="n06-ce-akd" secondAttribute="centerY" id="jcV-ef-kSU"/>
+                            <constraint firstItem="NrY-fL-bdF" firstAttribute="centerX" secondItem="n06-ce-akd" secondAttribute="centerX" id="mTy-Pl-zTp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="TASKS" id="MgT-Gm-f7L">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OTJ-HV-VSb">
+                            <connections>
+                                <action selector="save:" destination="hL3-It-qBX" id="1ww-Lb-s0b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8vK-7k-Fzk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923" y="877"/>
         </scene>
         <!--DAY-->
         <scene sceneID="MmU-LC-AOX">
             <objects>
-                <tableViewController id="rZi-y3-dgy" customClass="NotificationDayTableViewController" customModule="LocalNotification" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="rZi-y3-dgy" customClass="NotificationDayTableViewController" customModule="TSUserNotifications_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bzB-Py-9sF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,17 +266,17 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0V-IG-e8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="551" y="865"/>
+            <point key="canvasLocation" x="138" y="877"/>
         </scene>
         <!--TSUserNotificationCheck-->
         <scene sceneID="AEP-hn-rIw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wG2-Ub-qmC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="TSUserNotificationCheck" bundleIdentifier="org.cocoapods.TSUserNotifications" id="FAi-bd-qk6" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="YnV-ga-t6v"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wG2-Ub-qmC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1722" y="139"/>
+            <point key="canvasLocation" x="1755" y="139"/>
         </scene>
         <!--Notification-->
         <scene sceneID="uJ1-d0-inb">
@@ -292,6 +327,26 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="1Cu-D7-pUU" kind="show" id="8Lu-Vu-Awh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="n9T-Sp-lCm" style="IBUITableViewCellStyleDefault" id="bWW-9R-Fxn">
+                                        <rect key="frame" x="0.0" y="111.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bWW-9R-Fxn" id="8il-R3-I0g">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="TASKS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n9T-Sp-lCm">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="hL3-It-qBX" kind="show" id="goE-Bc-ETu"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

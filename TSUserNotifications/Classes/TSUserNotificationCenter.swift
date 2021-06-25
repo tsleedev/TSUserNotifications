@@ -26,63 +26,7 @@ public enum TSUserNotificationDayOfTheWeek: Int {
     case saturday
 }
 
-final public class TSUserNofitactionFireDate {
-    private var year: Int?
-    private var month: Int?
-    private var day: Int?
-    private var hour: Int?
-    private var minute: Int?
-    private var second: Int?
-    private var repeatType: TSUserNotificationRepeatType = .none
-    private var dayOfTheWeek: TSUserNotificationDayOfTheWeek?
-    
-    init(year: Int? = nil,
-         month: Int? = nil,
-         day: Int? = nil,
-         hour: Int? = nil,
-         minute: Int? = nil,
-         second: Int? = nil,
-         repeatType: TSUserNotificationRepeatType = .none,
-         dayOfTheWeek: TSUserNotificationDayOfTheWeek? = nil) {
-        self.year = year
-        self.month = month
-        self.day = day
-        self.hour = hour
-        self.minute = minute
-        self.second = second
-        self.repeatType = repeatType
-        self.dayOfTheWeek = dayOfTheWeek
-    }
-}
-
-private extension TSUserNofitactionFireDate {
-    var dateComponents: DateComponents {
-        var components: DateComponents
-        switch repeatType {
-        case .none:
-            components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: Date())
-        case .day:
-            components = Calendar.current.dateComponents([.hour, .minute, .second], from: Date())
-        case .week:
-            components = Calendar.current.dateComponents([.weekday, .hour, .minute, .second], from: Date())
-        case .month:
-            components = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: Date())
-        case .year:
-            components = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: Date())
-        }
-        components.weekday = dayOfTheWeek?.rawValue
-        components.year = year
-        components.month = month
-        components.day = day
-        components.hour = hour
-        components.minute = minute
-        components.second = second
-        return components
-    }
-}
-
-public class TSUserNotificationCenter {
-}
+public class TSUserNotificationCenter {}
 
 // MARK: - Public
 public extension TSUserNotificationCenter {
@@ -92,7 +36,7 @@ public extension TSUserNotificationCenter {
                     repeatType: TSUserNotificationRepeatType = .none,
                     title: String? = nil,
                     subtitle: String? = nil,
-                    body: String?,
+                    body: String? = nil,
                     badge: Int? = nil,
                     sound: UNNotificationSound? = nil,
                     userInfo: [String: Any]? = nil,
@@ -127,7 +71,7 @@ public extension TSUserNotificationCenter {
                     repeatType: TSUserNotificationRepeatType = .none,
                     title: String? = nil,
                     subtitle: String? = nil,
-                    body: String?,
+                    body: String? = nil,
                     badge: Int? = nil,
                     sound: UNNotificationSound? = nil,
                     userInfo: [String: Any]? = nil,
@@ -155,10 +99,10 @@ public extension TSUserNotificationCenter {
     static func set(identifier: String = UUID().uuidString,
                     fireDate: TSUserNofitactionFireDate,
                     repeats: Bool = false,
-                    title: String?,
-                    subtitle: String?,
-                    body: String?,
-                    badge: Int?,
+                    title: String? = nil,
+                    subtitle: String? = nil,
+                    body: String? = nil,
+                    badge: Int? = nil,
                     sound: UNNotificationSound? = nil,
                     userInfo: [String: Any]? = nil,
                     threadIdentifier: String? = nil) -> Bool {
@@ -175,13 +119,27 @@ public extension TSUserNotificationCenter {
     }
     
     @discardableResult
+    static func set(nofitication: TSUserNofitication) -> Bool {
+        return set(identifier: nofitication.identifier,
+                   dateComponents: nofitication.dateComponents,
+                   repeats: false,
+                   title: nofitication.title,
+                   subtitle: nofitication.subtitle,
+                   body: nofitication.body,
+                   badge: nofitication.badge,
+                   sound: nofitication.sound,
+                   userInfo: nofitication.userInfo,
+                   threadIdentifier: nofitication.threadIdentifier)
+    }
+    
+    @discardableResult
     static func set(identifier: String = UUID().uuidString,
                     dateComponents: DateComponents?,
                     repeats: Bool = false,
-                    title: String?,
-                    subtitle: String?,
-                    body: String?,
-                    badge: Int?,
+                    title: String? = nil,
+                    subtitle: String? = nil,
+                    body: String? = nil,
+                    badge: Int? = nil,
                     sound: UNNotificationSound? = nil,
                     userInfo: [String: Any]? = nil,
                     threadIdentifier: String? = nil) -> Bool {
@@ -257,6 +215,74 @@ public extension TSUserNotificationCenter {
     }
 }
 
+// MARK: - Order of priority
+public extension TSUserNotificationCenter {
+    static func set(nofitications: [TSUserNofitication], max: UInt = 64) {
+        if max <= 0 {
+            print("The max is greater than 0.")
+            return
+        } else  if max > 64 {
+            print("The max is smaller than 65.")
+            return
+        }
+        if nofitications.isEmpty {
+            print("Nofitications are empty.")
+            return
+        }
+        
+        let today = Date()
+        let calendar = Calendar.current
+        
+        var availableNofitications: [TSUserNofitication] = []
+        nofitications.forEach {
+            switch $0.repeatType {
+            case .none:
+                if calendar.compare(today, to: $0.date, toGranularity: .second) == .orderedAscending {
+                    availableNofitications.append($0)
+                }
+            case .day:
+                if let date = $0.date.nextDay() {
+                    var notification = $0
+                    notification.date = date
+                    availableNofitications.append(notification)
+                }
+            case .week:
+                if let date = $0.date.nextWeek() {
+                    var notification = $0
+                    notification.date = date
+                    availableNofitications.append(notification)
+                }
+            case .month:
+                if let date = $0.date.nextMonth() {
+                    var notification = $0
+                    notification.date = date
+                    availableNofitications.append(notification)
+                }
+            case.year:
+                if let date = $0.date.nextMonth() {
+                    var notification = $0
+                    notification.date = date
+                    availableNofitications.append(notification)
+                }
+            }
+        }
+        
+        let sortedAscendingNofitications = availableNofitications.sorted {
+            calendar.compare($0.date, to: $1.date, toGranularity: .second) == .orderedAscending
+        }
+        
+        print(sortedAscendingNofitications.map({ $0.identifier }))
+        for index in 0...sortedAscendingNofitications.count-1 {
+            if index == max {
+                break
+            }
+            let notification = sortedAscendingNofitications[index]
+            set(nofitication: notification)
+            
+        }
+    }
+}
+
 // MARK: - Remove
 public extension TSUserNotificationCenter {
     static func remove(identifiers: [String]) {
@@ -319,7 +345,7 @@ private extension TSUserNotificationCenter {
                     repeats: Bool = false,
                     content: UNNotificationContent) -> Bool {
         guard let date = Calendar.current.date(from: dateComponents) else { return false }
-        if Calendar.current.compare(Date(), to: date, toGranularity: .second) == ComparisonResult.orderedDescending {
+        if Calendar.current.compare(Date(), to: date, toGranularity: .second) == .orderedDescending {
             if !repeats {
                 return false
             }

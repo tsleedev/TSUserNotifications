@@ -12,6 +12,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		7CBDF1F62685A780003013F9 /* NotificationTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBDF1F52685A780003013F9 /* NotificationTasksViewController.swift */; };
+		7CBDF1F82685A9F0003013F9 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBDF1F72685A9F0003013F9 /* String+Extension.swift */; };
 		7CDA8F69268387A8005DF95D /* NotificationDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA8F67268387A7005DF95D /* NotificationDayTableViewController.swift */; };
 		7CDA8F6A268387A8005DF95D /* NotificationWeekTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA8F68268387A8005DF95D /* NotificationWeekTableViewController.swift */; };
 		7CDA8F7726838DDE005DF95D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDA8F7626838DDE005DF95D /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		70F944082EBDBF0C0144510D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		7446102F8E5CEE66C6795E7E /* Pods_TSUserNotifications_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TSUserNotifications_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CBDF1F52685A780003013F9 /* NotificationTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTasksViewController.swift; sourceTree = "<group>"; };
+		7CBDF1F72685A9F0003013F9 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7CDA8F67268387A7005DF95D /* NotificationDayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDayTableViewController.swift; sourceTree = "<group>"; };
 		7CDA8F68268387A8005DF95D /* NotificationWeekTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationWeekTableViewController.swift; sourceTree = "<group>"; };
 		7CDA8F7626838DDE005DF95D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -118,6 +122,8 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				7CDA8F67268387A7005DF95D /* NotificationDayTableViewController.swift */,
 				7CDA8F68268387A8005DF95D /* NotificationWeekTableViewController.swift */,
+				7CBDF1F52685A780003013F9 /* NotificationTasksViewController.swift */,
+				7CBDF1F72685A9F0003013F9 /* String+Extension.swift */,
 				7CDA8F7626838DDE005DF95D /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -333,8 +339,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CBDF1F62685A780003013F9 /* NotificationTasksViewController.swift in Sources */,
 				7CDA8F69268387A8005DF95D /* NotificationDayTableViewController.swift in Sources */,
 				7CDA8F6A268387A8005DF95D /* NotificationWeekTableViewController.swift in Sources */,
+				7CBDF1F82685A9F0003013F9 /* String+Extension.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
