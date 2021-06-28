@@ -76,7 +76,7 @@ public extension TSUserNotificationCenter {
                     sound: UNNotificationSound? = nil,
                     userInfo: [String: Any]? = nil,
                     threadIdentifier: String? = nil) -> Bool {
-        let userNofitactionFireDate = TSUserNofitactionFireDate(year: year,
+        let userNofitactionFireDate = TSUserNotificationFireDate(year: year,
                                                                 month: month,
                                                                 day: day,
                                                                 hour: hour,
@@ -97,7 +97,7 @@ public extension TSUserNotificationCenter {
     
     @discardableResult
     static func set(identifier: String = UUID().uuidString,
-                    fireDate: TSUserNofitactionFireDate,
+                    fireDate: TSUserNotificationFireDate,
                     repeats: Bool = false,
                     title: String? = nil,
                     subtitle: String? = nil,
@@ -116,20 +116,6 @@ public extension TSUserNotificationCenter {
                    sound: sound,
                    userInfo: userInfo,
                    threadIdentifier: threadIdentifier)
-    }
-    
-    @discardableResult
-    static func set(nofitication: TSUserNofitication) -> Bool {
-        return set(identifier: nofitication.identifier,
-                   dateComponents: nofitication.dateComponents,
-                   repeats: false,
-                   title: nofitication.title,
-                   subtitle: nofitication.subtitle,
-                   body: nofitication.body,
-                   badge: nofitication.badge,
-                   sound: nofitication.sound,
-                   userInfo: nofitication.userInfo,
-                   threadIdentifier: nofitication.threadIdentifier)
     }
     
     @discardableResult
@@ -179,7 +165,7 @@ public extension TSUserNotificationCenter {
         }
         remove(identifiers: identifiers)
         if dayOfTheWeeks.count >= 7 {
-            let userNofitactionFireDate = TSUserNofitactionFireDate(hour: hour,
+            let userNofitactionFireDate = TSUserNotificationFireDate(hour: hour,
                                                                     minute: miniute,
                                                                     second: second,
                                                                     repeatType: .day)
@@ -196,7 +182,7 @@ public extension TSUserNotificationCenter {
             return
         }
         dayOfTheWeeks.forEach { dayOfTheWeek in
-            let userNofitactionFireDate = TSUserNofitactionFireDate(hour: hour,
+            let userNofitactionFireDate = TSUserNotificationFireDate(hour: hour,
                                                                     minute: miniute,
                                                                     second: second,
                                                                     repeatType: .week,
@@ -211,74 +197,6 @@ public extension TSUserNotificationCenter {
                 sound: sound,
                 userInfo: userInfo,
                 threadIdentifier: threadIdentifier)
-        }
-    }
-}
-
-// MARK: - Order of priority
-public extension TSUserNotificationCenter {
-    static func set(nofitications: [TSUserNofitication], max: UInt = 64) {
-        if max <= 0 {
-            print("The max is greater than 0.")
-            return
-        } else  if max > 64 {
-            print("The max is smaller than 65.")
-            return
-        }
-        if nofitications.isEmpty {
-            print("Nofitications are empty.")
-            return
-        }
-        
-        let today = Date()
-        let calendar = Calendar.current
-        
-        var availableNofitications: [TSUserNofitication] = []
-        nofitications.forEach {
-            switch $0.repeatType {
-            case .none:
-                if calendar.compare(today, to: $0.date, toGranularity: .second) == .orderedAscending {
-                    availableNofitications.append($0)
-                }
-            case .day:
-                if let date = $0.date.nextDay() {
-                    var notification = $0
-                    notification.date = date
-                    availableNofitications.append(notification)
-                }
-            case .week:
-                if let date = $0.date.nextWeek() {
-                    var notification = $0
-                    notification.date = date
-                    availableNofitications.append(notification)
-                }
-            case .month:
-                if let date = $0.date.nextMonth() {
-                    var notification = $0
-                    notification.date = date
-                    availableNofitications.append(notification)
-                }
-            case.year:
-                if let date = $0.date.nextMonth() {
-                    var notification = $0
-                    notification.date = date
-                    availableNofitications.append(notification)
-                }
-            }
-        }
-        
-        let sortedAscendingNofitications = availableNofitications.sorted {
-            calendar.compare($0.date, to: $1.date, toGranularity: .second) == .orderedAscending
-        }
-        
-        print(sortedAscendingNofitications.map({ $0.identifier }))
-        for index in 0...sortedAscendingNofitications.count-1 {
-            if index == max {
-                break
-            }
-            let notification = sortedAscendingNofitications[index]
-            set(nofitication: notification)
-            
         }
     }
 }

@@ -7,6 +7,33 @@
 
 import UIKit
 
+// MARK: Adding
+extension Date {
+    func adding(days: Int) -> Date {
+        var components = DateComponents()
+        components.day = days
+        return Calendar.current.date(byAdding: components, to: self)!
+    }
+    
+    func adding(weeks: Int) -> Date {
+        var components = DateComponents()
+        components.weekOfYear = weeks
+        return Calendar.current.date(byAdding: components, to: self)!
+    }
+    
+    func adding(months: Int) -> Date {
+        var components = DateComponents()
+        components.month = months
+        return Calendar.current.date(byAdding: components, to: self)!
+    }
+    
+    func adding(years: Int) -> Date {
+        var components = DateComponents()
+        components.year = years
+        return Calendar.current.date(byAdding: components, to: self)!
+    }
+}
+
 // MARK: Calculator Next Date
 extension Date {
     func nextDay(from today: Date = Date()) -> Date? {

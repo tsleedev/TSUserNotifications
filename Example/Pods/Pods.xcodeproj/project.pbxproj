@@ -16,11 +16,12 @@
 		6224F8C924E8B9802045E5FC859A8AA6 /* TSUserNotificationCheckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D68754EBF69A12565114DE30218DB2 /* TSUserNotificationCheckTableViewController.swift */; };
 		730AC6359AD3C57DDDC52DB239CD2E4B /* TSUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F6E6B3989DED73EA3B4E2FA04610EB /* TSUserNotificationCenter.swift */; };
 		78D945DB75627F0EA42A3D1CCDCB73CA /* TSUserNotificationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324D89589B68C6355E3C07D689F17E4B /* TSUserNotificationInfo.swift */; };
+		7C90819226899C70003CB6FE /* TSUserNotificationCenter+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90819126899C70003CB6FE /* TSUserNotificationCenter+Notifications.swift */; };
 		7CBDF1F426858F45003013F9 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBDF1F326858F45003013F9 /* Date+Extension.swift */; };
 		8569287DA4E6D72FF85A446CAFAC6DF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		875A0F2147C8E9C655D6ED2A7EB091C7 /* TSUserNotifications-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 578AE31DD1C512DDAD8A1C7F3A761036 /* TSUserNotifications-dummy.m */; };
-		909C2843268627DB00D8972A /* TSUserNofitication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909C2842268627DB00D8972A /* TSUserNofitication.swift */; };
-		909C2845268628AA00D8972A /* TSUserNofitactionFireDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909C2844268628AA00D8972A /* TSUserNofitactionFireDate.swift */; };
+		909C2843268627DB00D8972A /* TSUserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909C2842268627DB00D8972A /* TSUserNotification.swift */; };
+		909C2845268628AA00D8972A /* TSUserNotificationFireDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909C2844268628AA00D8972A /* TSUserNotificationFireDate.swift */; };
 		991D8179791A8F19E49243148962666A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		A6C81DB03BCC12371685108329F40439 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		CC6B24EDC1CA21A0E2942E409E616A3B /* Pods-TSUserNotifications_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F2DF626895DBB12A72C499F2E2A90E21 /* Pods-TSUserNotifications_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,11 +60,12 @@
 		6DE42C2D26E0F41A3614AE41349CB2CB /* Pods-TSUserNotifications_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSUserNotifications_Example.release.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7BDF5D8439B83E1DBDA650AA7D70D826 /* Pods-TSUserNotifications_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSUserNotifications_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		7C90819126899C70003CB6FE /* TSUserNotificationCenter+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TSUserNotificationCenter+Notifications.swift"; path = "TSUserNotifications/Classes/TSUserNotificationCenter+Notifications.swift"; sourceTree = "<group>"; };
 		7CBDF1F326858F45003013F9 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		8BF86271F59213347848C5F6B7A4530B /* Pods-TSUserNotifications_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSUserNotifications_Tests-Info.plist"; sourceTree = "<group>"; };
 		8E36538557DB7584EF7AA66EE69D2A49 /* TSUserNotifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TSUserNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		909C2842268627DB00D8972A /* TSUserNofitication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSUserNofitication.swift; sourceTree = "<group>"; };
-		909C2844268628AA00D8972A /* TSUserNofitactionFireDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSUserNofitactionFireDate.swift; sourceTree = "<group>"; };
+		909C2842268627DB00D8972A /* TSUserNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSUserNotification.swift; sourceTree = "<group>"; };
+		909C2844268628AA00D8972A /* TSUserNotificationFireDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSUserNotificationFireDate.swift; sourceTree = "<group>"; };
 		90C0FEAD74BBF236CC273F19652A4E75 /* Pods-TSUserNotifications_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TSUserNotifications_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		995AF480484E4C06100BB9118BB13C39 /* TSUserNotificationCheckTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TSUserNotificationCheckTableViewCell.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				22F6E6B3989DED73EA3B4E2FA04610EB /* TSUserNotificationCenter.swift */,
+				7C90819126899C70003CB6FE /* TSUserNotificationCenter+Notifications.swift */,
 				909C2841268627DB00D8972A /* Model */,
 				40794EFE736755770FD3DD490287986F /* NotificationCheck */,
 				7CBDF1F226858F45003013F9 /* Utils */,
@@ -209,8 +212,8 @@
 		909C2841268627DB00D8972A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				909C2842268627DB00D8972A /* TSUserNofitication.swift */,
-				909C2844268628AA00D8972A /* TSUserNofitactionFireDate.swift */,
+				909C2842268627DB00D8972A /* TSUserNotification.swift */,
+				909C2844268628AA00D8972A /* TSUserNotificationFireDate.swift */,
 			);
 			name = Model;
 			path = TSUserNotifications/Classes/Model;
@@ -433,12 +436,13 @@
 			files = (
 				730AC6359AD3C57DDDC52DB239CD2E4B /* TSUserNotificationCenter.swift in Sources */,
 				483D926A6116BF0B8425387768F4DAE0 /* TSUserNotificationCheck.storyboard in Sources */,
-				909C2845268628AA00D8972A /* TSUserNofitactionFireDate.swift in Sources */,
+				909C2845268628AA00D8972A /* TSUserNotificationFireDate.swift in Sources */,
 				3FC58B14B93D8E2E53091866C1FDF5DD /* TSUserNotificationCheckTableViewCell.swift in Sources */,
 				6224F8C924E8B9802045E5FC859A8AA6 /* TSUserNotificationCheckTableViewController.swift in Sources */,
 				7CBDF1F426858F45003013F9 /* Date+Extension.swift in Sources */,
+				7C90819226899C70003CB6FE /* TSUserNotificationCenter+Notifications.swift in Sources */,
 				78D945DB75627F0EA42A3D1CCDCB73CA /* TSUserNotificationInfo.swift in Sources */,
-				909C2843268627DB00D8972A /* TSUserNofitication.swift in Sources */,
+				909C2843268627DB00D8972A /* TSUserNotification.swift in Sources */,
 				875A0F2147C8E9C655D6ED2A7EB091C7 /* TSUserNotifications-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,7 +699,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.3;
+				MARKETING_VERSION = 0.5.0;
 				MODULEMAP_FILE = "Target Support Files/TSUserNotifications/TSUserNotifications.modulemap";
 				PRODUCT_MODULE_NAME = TSUserNotifications;
 				PRODUCT_NAME = TSUserNotifications;
@@ -797,7 +801,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.3;
+				MARKETING_VERSION = 0.5.0;
 				MODULEMAP_FILE = "Target Support Files/TSUserNotifications/TSUserNotifications.modulemap";
 				PRODUCT_MODULE_NAME = TSUserNotifications;
 				PRODUCT_NAME = TSUserNotifications;

@@ -53,28 +53,34 @@ TSUserNotificationCenter.setDayOfTheWeek(identifier: "WEEK",
 
 Automatic calculation
 ```
-let usernofitications = [
-    TSUserNofitication(identifier: "task1",
+let userNotifications = [
+    TSUserNotification(identifier: "task1",
                        date: "2020-01-01".date!,
                        repeatType: .none,
                        title: "2020-01-01 none"),
-    TSUserNofitication(identifier: "task2",
+    TSUserNotification(identifier: "task2",
                        date: "2025-12-24".date!,
                        repeatType: .none,
                        title: "2025-12-24 none"),
-    TSUserNofitication(identifier: "task3",
+    TSUserNotification(identifier: "task3",
                        date: "2021-01-01".date!,
                        repeatType: .day,
                        title: "2021-01-01 day"),
-    TSUserNofitication(identifier: "task4",
+    TSUserNotification(identifier: "task4",
                        date: "2021-01-01".date!,
                        repeatType: .week,
                        title: "2020-01-01(Fri) week")
     ]
     
 TSUserNotificationCenter.removeContain(identifier: Identifier.task)
-TSUserNotificationCenter.set(nofitications: usernofitications, max: 2)
+TSUserNotificationCenter.set(notifications: userNotifications, max: 10)
 ```
+If today is June 01,
+
+result)
+01(task3), 01(task4), 02(task3), 03(task3), 04(task3),
+05(task3), 06(task3), 07(task3), 08(task3), 08(task4)
+
 
 ## Author
 

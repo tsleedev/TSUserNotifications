@@ -9,44 +9,82 @@ import UIKit
 import TSUserNotifications
 
 private enum Identifier {
-    static let task = "Task"
+    static let task1 = "Task1"
+    static let task2 = "Task2"
+    static let task3 = "Task3"
 }
 
 class NotificationTasksViewController: UIViewController {
-    let usernofitications = [
-        TSUserNofitication(identifier: "\(Identifier.task)1",
+    let userNotifications1 = [
+        TSUserNotification(identifier: "\(Identifier.task1)_1",
                            date: "2020-01-01".date!,
                            repeatType: .none,
                            title: "2020-01-01 none"),
-        TSUserNofitication(identifier: "\(Identifier.task)2",
+        TSUserNotification(identifier: "\(Identifier.task1)_2",
                            date: "2025-12-24".date!,
                            repeatType: .none,
                            title: "2025-12-24 none"),
-        TSUserNofitication(identifier: "\(Identifier.task)3",
+        TSUserNotification(identifier: "\(Identifier.task1)_3",
                            date: "2021-01-01".date!,
                            repeatType: .day,
                            title: "2021-01-01 day"),
-        TSUserNofitication(identifier: "\(Identifier.task)4",
+        TSUserNotification(identifier: "\(Identifier.task1)_4",
                            date: "2021-01-01".date!,
                            repeatType: .week,
-                           title: "2020-01-01(Fri) week"),
-        TSUserNofitication(identifier: "\(Identifier.task)5",
+                           title: "2021-01-01(Fri) week"),
+        TSUserNotification(identifier: "\(Identifier.task1)_5",
                            date: "2021-01-01".date!,
                            repeatType: .month,
-                           title: "2020-01-01 month"),
-        TSUserNofitication(identifier: "\(Identifier.task)6",
+                           title: "2021-01-01 month"),
+        TSUserNotification(identifier: "\(Identifier.task1)_6",
                            date: "2021-01-31".date!,
                            repeatType: .month,
-                           title: "2020-01-31 month"),
-        TSUserNofitication(identifier: "\(Identifier.task)7",
+                           title: "2021-01-31 month"),
+        TSUserNotification(identifier: "\(Identifier.task1)_7",
                            date: "2021-01-01".date!,
                            repeatType: .year,
-                           title: "2020-01-01 year")
+                           title: "2021-01-01 year")
     ]
+    
+    let userNotifications2 = [
+//        TSUserNotification(identifier: "\(Identifier.task2)_1",
+//                           date: "2021-01-01".date!,
+//                           repeatType: .day,
+//                           title: "2021-01-01 day"),
+//        TSUserNotification(identifier: "\(Identifier.task2)_2",
+//                           date: "2021-01-01".date!,
+//                           repeatType: .week,
+//                           title: "2021-01-01(Fri) week"),
+//        TSUserNotification(identifier: "\(Identifier.task2)_3",
+//                           date: "2021-01-01".date!,
+//                           repeatType: .month,
+//                           title: "2021-01-01 month"),
+        TSUserNotification(identifier: "\(Identifier.task2)_4",
+                           date: "2021-01-31".date!,
+                           repeatType: .month,
+                           title: "2021-01-31 month"),
+//        TSUserNotification(identifier: "\(Identifier.task2)_5",
+//                           date: "2021-01-01".date!,
+//                           repeatType: .year,
+//                           title: "2021-01-01 year"),
+//        TSUserNotification(identifier: "\(Identifier.task2)_6",
+//                           date: "2020-02-29".date!,
+//                           repeatType: .year,
+//                           title: "2020-02-29 year")
+    ]
+    
+    var userNotifications3: [TSUserNotification] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        for index in 0..<64 {
+            let notification = TSUserNotification(identifier: "\(Identifier.task3)_\(index)",
+                                                  date: "2021-01-01".date!,
+                                                  repeatType: .day,
+                                                  title: "2021-01-01 date")
+            userNotifications3.append(notification)
+        }
     }
 }
 
@@ -54,8 +92,15 @@ class NotificationTasksViewController: UIViewController {
 private extension NotificationTasksViewController {
     @IBAction func save(_ sender: Any) {
         navigationController?.popViewController(animated: true)
-        TSUserNotificationCenter.removeContain(identifier: Identifier.task)
-        TSUserNotificationCenter.set(nofitications: usernofitications, max: 5)
+        
+//        TSUserNotificationCenter.removeContain(identifier: Identifier.task1)
+//        TSUserNotificationCenter.set(notifications: userNotifications1, max: 5)
+        
+//        TSUserNotificationCenter.removeContain(identifier: Identifier.task2)
+//        TSUserNotificationCenter.set(notifications: userNotifications2, max: 10)
+        
+        TSUserNotificationCenter.removeContain(identifier: Identifier.task3)
+        TSUserNotificationCenter.set(notifications: userNotifications3, max: 64)
     }
 }
 
