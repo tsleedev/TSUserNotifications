@@ -78,7 +78,7 @@ TSUserNotificationCenter.removeContain(identifier: Identifier.task)
 TSUserNotificationCenter.set(notifications: userNotifications, max: 10)
 ```
 If today is June 29,
-![result](./Screen/screen_priority.png){: width="100"}
+<img src = "./Screen/screen_priority.png" width="100px">
 
 ## Author
 
