@@ -51,8 +51,7 @@ TSUserNotificationCenter.setDayOfTheWeek(identifier: "WEEK",
                                          userInfo: nil,
                                          threadIdentifier: nil)
 ```
-<img src = "./Screen/screen_week1.png" width="200px">
-<img src = "./Screen/screen_week2.png" width="200px">
+<img src = "./Screen/screen_week1.png" width="200px"> <img src = "./Screen/screen_week2.png" width="200px">
 
 Automatic calculation
 ```
