@@ -35,7 +35,7 @@ TSUserNotificationCenter.set(identifier: "test",
                              userInfo: nil,
                              threadIdentifier: nil)
 ```
-![result](./Screen/screen_none.png){: width="100"}
+<img src = "./Screen/screen_none.png" width="200px">
 
 Weekly repeat
 ```
@@ -51,7 +51,8 @@ TSUserNotificationCenter.setDayOfTheWeek(identifier: "WEEK",
                                          userInfo: nil,
                                          threadIdentifier: nil)
 ```
-![result](./Screen/screen_week1.png){: width="100"} ![result](./Screen/screen_week2.png){: width="100"}
+<img src = "./Screen/screen_week1.png" width="200px">
+<img src = "./Screen/screen_week2.png" width="200px">
 
 Automatic calculation
 ```
@@ -78,7 +79,8 @@ TSUserNotificationCenter.removeContain(identifier: Identifier.task)
 TSUserNotificationCenter.set(notifications: userNotifications, max: 10)
 ```
 If today is June 29,
-<img src = "./Screen/screen_priority.png" width="100px">
+
+<img src = "./Screen/screen_priority.png" width="200px">
 
 ## Author
 
