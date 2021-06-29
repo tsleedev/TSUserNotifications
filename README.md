@@ -35,6 +35,7 @@ TSUserNotificationCenter.set(identifier: "test",
                              userInfo: nil,
                              threadIdentifier: nil)
 ```
+![result](./Screen/screen_none.png)
 
 Weekly repeat
 ```
@@ -50,6 +51,7 @@ TSUserNotificationCenter.setDayOfTheWeek(identifier: "WEEK",
                                          userInfo: nil,
                                          threadIdentifier: nil)
 ```
+![result](./Screen/screen_week1.png) ![result](./Screen/screen_week2.png)
 
 Automatic calculation
 ```
@@ -75,12 +77,8 @@ let userNotifications = [
 TSUserNotificationCenter.removeContain(identifier: Identifier.task)
 TSUserNotificationCenter.set(notifications: userNotifications, max: 10)
 ```
-If today is June 01,
-
-result)
-01(task3), 01(task4), 02(task3), 03(task3), 04(task3),
-05(task3), 06(task3), 07(task3), 08(task3), 08(task4)
-
+If today is June 29,
+![result](./Screen/screen_priority.png)
 
 ## Author
 

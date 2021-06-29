@@ -37,7 +37,6 @@ extension Date {
 // MARK: Calculator Next Date
 extension Date {
     func nextDay(from today: Date = Date()) -> Date? {
-        let today = Date()
         let calendar = Calendar.current
         let todayComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: today)
         var dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: self)

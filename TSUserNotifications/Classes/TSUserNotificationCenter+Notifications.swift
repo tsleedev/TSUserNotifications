@@ -82,45 +82,50 @@ public extension TSUserNotificationCenter {
         
         var availableAllNotifications: [TSUserNotification] = []
         availableNotifications.forEach {
+            var compareDate = Date()
             switch $0.repeatType {
             case .none:
                 if calendar.compare(today, to: $0.date, toGranularity: .second) == .orderedAscending {
                     availableAllNotifications.append($0)
                 }
             case .day:
-                for index in 0...max-1 {
-                    if let date = $0.date.nextDay() {
+                for index in 1...max {
+                    if let date = $0.date.nextDay(from: compareDate) {
                         var notification = $0
                         notification.identifier += "_\(index)"
-                        notification.date = date.adding(days: index)
+                        notification.date = date
                         availableAllNotifications.append(notification)
+                        compareDate = date.adding(days: 1)
                     }
                 }
             case .week:
-                for index in 0...max-1 {
-                    if let date = $0.date.nextWeek() {
+                for index in 1...max {
+                    if let date = $0.date.nextWeek(from: compareDate) {
                         var notification = $0
                         notification.identifier += "_\(index)"
-                        notification.date = date.adding(weeks: index)
+                        notification.date = date
                         availableAllNotifications.append(notification)
+                        compareDate = date.adding(weeks: 1)
                     }
                 }
             case .month:
-                for index in 0...max-1 {
-                    if let date = $0.date.nextMonth() {
+                for index in 1...max {
+                    if let date = $0.date.nextMonth(from: compareDate) {
                         var notification = $0
                         notification.identifier += "_\(index)"
-                        notification.date = date.adding(months: index)
+                        notification.date = date
                         availableAllNotifications.append(notification)
+                        compareDate = date.adding(months: 1)
                     }
                 }
             case.year:
-                for index in 0...max-1 {
-                    if let date = $0.date.nextYear() {
+                for index in 1...max {
+                    if let date = $0.date.nextYear(from: compareDate) {
                         var notification = $0
                         notification.identifier += "_\(index)"
-                        notification.date = date.adding(years: index)
+                        notification.date = date
                         availableAllNotifications.append(notification)
+                        compareDate = date.adding(years: 1)
                     }
                 }
             }

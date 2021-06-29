@@ -16,34 +16,22 @@ private enum Identifier {
 
 class NotificationTasksViewController: UIViewController {
     let userNotifications1 = [
-        TSUserNotification(identifier: "\(Identifier.task1)_1",
+        TSUserNotification(identifier: "task1",
                            date: "2020-01-01".date!,
                            repeatType: .none,
                            title: "2020-01-01 none"),
-        TSUserNotification(identifier: "\(Identifier.task1)_2",
+        TSUserNotification(identifier: "task2",
                            date: "2025-12-24".date!,
                            repeatType: .none,
                            title: "2025-12-24 none"),
-        TSUserNotification(identifier: "\(Identifier.task1)_3",
+        TSUserNotification(identifier: "task3",
                            date: "2021-01-01".date!,
                            repeatType: .day,
                            title: "2021-01-01 day"),
-        TSUserNotification(identifier: "\(Identifier.task1)_4",
+        TSUserNotification(identifier: "task4",
                            date: "2021-01-01".date!,
                            repeatType: .week,
-                           title: "2021-01-01(Fri) week"),
-        TSUserNotification(identifier: "\(Identifier.task1)_5",
-                           date: "2021-01-01".date!,
-                           repeatType: .month,
-                           title: "2021-01-01 month"),
-        TSUserNotification(identifier: "\(Identifier.task1)_6",
-                           date: "2021-01-31".date!,
-                           repeatType: .month,
-                           title: "2021-01-31 month"),
-        TSUserNotification(identifier: "\(Identifier.task1)_7",
-                           date: "2021-01-01".date!,
-                           repeatType: .year,
-                           title: "2021-01-01 year")
+                           title: "2020-01-01(Fri) week")
     ]
     
     let userNotifications2 = [
@@ -59,18 +47,18 @@ class NotificationTasksViewController: UIViewController {
 //                           date: "2021-01-01".date!,
 //                           repeatType: .month,
 //                           title: "2021-01-01 month"),
-        TSUserNotification(identifier: "\(Identifier.task2)_4",
-                           date: "2021-01-31".date!,
-                           repeatType: .month,
-                           title: "2021-01-31 month"),
+//        TSUserNotification(identifier: "\(Identifier.task2)_4",
+//                           date: "2021-01-31".date!,
+//                           repeatType: .month,
+//                           title: "2021-01-31 month"),
 //        TSUserNotification(identifier: "\(Identifier.task2)_5",
 //                           date: "2021-01-01".date!,
 //                           repeatType: .year,
 //                           title: "2021-01-01 year"),
-//        TSUserNotification(identifier: "\(Identifier.task2)_6",
-//                           date: "2020-02-29".date!,
-//                           repeatType: .year,
-//                           title: "2020-02-29 year")
+        TSUserNotification(identifier: "\(Identifier.task2)_6",
+                           date: "2020-02-29".date!,
+                           repeatType: .year,
+                           title: "2020-02-29 year")
     ]
     
     var userNotifications3: [TSUserNotification] = []
@@ -93,14 +81,14 @@ private extension NotificationTasksViewController {
     @IBAction func save(_ sender: Any) {
         navigationController?.popViewController(animated: true)
         
-//        TSUserNotificationCenter.removeContain(identifier: Identifier.task1)
-//        TSUserNotificationCenter.set(notifications: userNotifications1, max: 5)
+        TSUserNotificationCenter.removeContain(identifier: Identifier.task1)
+        TSUserNotificationCenter.set(notifications: userNotifications1, max: 5)
         
 //        TSUserNotificationCenter.removeContain(identifier: Identifier.task2)
 //        TSUserNotificationCenter.set(notifications: userNotifications2, max: 10)
         
-        TSUserNotificationCenter.removeContain(identifier: Identifier.task3)
-        TSUserNotificationCenter.set(notifications: userNotifications3, max: 64)
+//        TSUserNotificationCenter.removeContain(identifier: Identifier.task3)
+//        TSUserNotificationCenter.set(notifications: userNotifications3, max: 64)
     }
 }
 

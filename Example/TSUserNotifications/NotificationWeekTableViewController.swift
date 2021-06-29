@@ -47,12 +47,12 @@ private extension NotificationWeekTableViewController {
                                                  hour: hour,
                                                  miniute: miniute,
                                                  dayOfTheWeeks: selectedWeeks,
-                                                 title: "주간 반복 테스트",
+                                                 title: "weekly repeat test",
                                                  subtitle: nil,
-                                                 body: "테스트입니다.",
+                                                 body: "it's a test.",
                                                  badge: nil,
                                                  sound: nil,
                                                  userInfo: nil,
-                                                 threadIdentifier: nil)
+                                                 threadIdentifier: "WEEK")
     }
 }

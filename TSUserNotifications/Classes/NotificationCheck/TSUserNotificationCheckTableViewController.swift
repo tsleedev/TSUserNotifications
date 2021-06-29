@@ -64,31 +64,31 @@ private extension TSUserNotificationCheckTableViewController {
                     if let weekday = weekday, isRepeat == true {
                         switch weekday {
                         case 1:
-                            repeatDay = "매주 일요일"
+                            repeatDay = "Every Sun"
                         case 2:
-                            repeatDay = "매주 월요일"
+                            repeatDay = "Every Mon"
                         case 3:
-                            repeatDay = "매주 화요일"
+                            repeatDay = "Every Tue"
                         case 4:
-                            repeatDay = "매주 수요일"
+                            repeatDay = "Every Wed"
                         case 5:
-                            repeatDay = "매주 목요일"
+                            repeatDay = "Every Thu"
                         case 6:
-                            repeatDay = "매주 금요일"
+                            repeatDay = "Every Fri"
                         case 7:
-                            repeatDay = "매주 토요일"
+                            repeatDay = "Every Sat"
                         default:
                             break
                         }
                     } else if isRepeat == true {
                         if dateComponents.day == nil {
-                            repeatDay = "매일"
+                            repeatDay = "Every day"
                         } else if dateComponents.month == nil {
-                            repeatDay = "매주"
+                            repeatDay = "Every week"
                         } else if dateComponents.year == nil {
-                            repeatDay = "매월"
+                            repeatDay = "Every month"
                         } else {
-                            repeatDay = "매년"
+                            repeatDay = "Every year"
                         }
                     }
                     self.setup(identifier: request.identifier,
@@ -98,7 +98,7 @@ private extension TSUserNotificationCheckTableViewController {
                                alertBody: request.content.body,
                                repeatDay: repeatDay)
                 } else if let trigger = request.trigger as? UNTimeIntervalNotificationTrigger {
-                    let repeatDay: String? = trigger.repeats ? "반복 \(trigger.timeInterval)" : nil
+                    let repeatDay: String? = trigger.repeats ? "Repeat \(trigger.timeInterval)" : nil
                     self.setup(identifier: request.identifier,
                                threadIdentifier: request.content.threadIdentifier,
                                fireDate: trigger.nextTriggerDate(),
@@ -116,7 +116,11 @@ private extension TSUserNotificationCheckTableViewController {
     }
     
     func setupTitle() {
-        title = "PendingNoti (\(notifications.count))"
+        var total = 0
+        notifications.forEach { notification in
+            total += notification.details.count
+        }
+        title = "PendingNoti (\(total))"
     }
     
     func setup(identifier: String, threadIdentifier: String?, fireDate: Date?, alertTitle: String?, alertBody: String?, repeatDay: String?) {
