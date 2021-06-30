@@ -699,7 +699,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.6.0;
+				MARKETING_VERSION = 0.7.0;
 				MODULEMAP_FILE = "Target Support Files/TSUserNotifications/TSUserNotifications.modulemap";
 				PRODUCT_MODULE_NAME = TSUserNotifications;
 				PRODUCT_NAME = TSUserNotifications;
@@ -801,7 +801,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.6.0;
+				MARKETING_VERSION = 0.7.0;
 				MODULEMAP_FILE = "Target Support Files/TSUserNotifications/TSUserNotifications.modulemap";
 				PRODUCT_MODULE_NAME = TSUserNotifications;
 				PRODUCT_NAME = TSUserNotifications;

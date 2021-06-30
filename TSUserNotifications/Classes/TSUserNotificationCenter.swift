@@ -203,17 +203,18 @@ public extension TSUserNotificationCenter {
 
 // MARK: - Remove
 public extension TSUserNotificationCenter {
-    static func remove(identifiers: [String]) {
+    static func remove(identifiers: [String], completion: (() -> Void)? = nil) {
         DispatchQueue.main.async {
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
             print("UNUserNotificationCenter removes : \(identifiers)")
+            completion?()
         }
     }
     
-    static func removeContain(identifier: String) {
+    static func removeContain(identifier: String, completion: @escaping () -> Void) {
         UNUserNotificationCenter.current().getPendingNotificationRequests { requests in
             let identifiers = requests.filter { $0.identifier.contains(identifier) }.map { $0.identifier }
-            remove(identifiers: identifiers)
+            remove(identifiers: identifiers, completion: completion)
         }
     }
     
