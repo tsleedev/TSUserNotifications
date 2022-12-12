@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TSUserNotifications'
-  s.version          = '0.8.0'
+  s.version          = '0.9.0'
   s.swift_version    = '5'
   s.summary          = 'Easy UserNotifications.'
 
@@ -31,7 +31,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'TSUserNotifications/Classes/**/*'
+  s.source_files = 'Sources/TSUserNotifications/Classes/**/*'
   
   # s.resource_bundles = {
   #   'TSUserNotifications' => ['TSUserNotifications/Assets/*.png']
