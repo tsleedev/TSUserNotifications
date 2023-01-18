@@ -24,8 +24,6 @@
 		D1C8AEF0091DEBDE475FB00A6D55CE82 /* Pods-TSUserNotifications_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C760BD2BD783C8E6EDD03AE041AA197D /* Pods-TSUserNotifications_Example-dummy.m */; };
 		D5ACBBCDB7692D7154D76B504677FAF5 /* TSUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A92ACB0479A85D2381C9DE9564A470D /* TSUserNotificationCenter.swift */; };
 		D5DAD9490E5EC0A29704EB658839FCAD /* TSUserNotificationCheckTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DB436C524FD16E14BBF3A0184583DF /* TSUserNotificationCheckTableViewController.swift */; };
-		DBE365896D1FA8C0B210F99F210728FD /* TSUserNofitactionFireDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B99D3B5943B7DDE80BEFB4665C984C /* TSUserNofitactionFireDate.swift */; };
-		EE299A2DF39662A8ABA63F5217DAC78F /* TSUserNofitication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F68A8A2B9C6E6627F64B57ED0E840FE /* TSUserNofitication.swift */; };
 		FBB04A0CA09A7CED6E1F15C12C1C162D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB89607E8C4A8BB0288EA8D2690B8B8 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,25 +48,23 @@
 		036987C4A5884B454D064F1CCAA56D7D /* TSUserNotifications.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSUserNotifications.debug.xcconfig; sourceTree = "<group>"; };
 		0A92ACB0479A85D2381C9DE9564A470D /* TSUserNotificationCenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TSUserNotificationCenter.swift; path = Sources/TSUserNotifications/Classes/TSUserNotificationCenter.swift; sourceTree = "<group>"; };
 		13573C5EBC90A084583219CA728B96AD /* Pods-TSUserNotifications_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSUserNotifications_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		16D5DF3A158E74A7A395E483B6263C10 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		16D5DF3A158E74A7A395E483B6263C10 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		16DB436C524FD16E14BBF3A0184583DF /* TSUserNotificationCheckTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TSUserNotificationCheckTableViewController.swift; sourceTree = "<group>"; };
 		2714FDB9B45AC5E96B5562AF4855094A /* TSUserNotificationCenter+Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TSUserNotificationCenter+Notifications.swift"; path = "Sources/TSUserNotifications/Classes/TSUserNotificationCenter+Notifications.swift"; sourceTree = "<group>"; };
 		3278E5F91F66FEAFF7AB9F61156709CB /* TSUserNotifications.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSUserNotifications.release.xcconfig; sourceTree = "<group>"; };
 		32952940E23CF66BE6BD69A498BFBD35 /* Pods-TSUserNotifications_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TSUserNotifications_Example-frameworks.sh"; sourceTree = "<group>"; };
-		3F68A8A2B9C6E6627F64B57ED0E840FE /* TSUserNofitication.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TSUserNofitication.swift; sourceTree = "<group>"; };
 		4A27DAA3B7A9DE0014BE62D22B396743 /* TSUserNotifications-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TSUserNotifications-Info.plist"; sourceTree = "<group>"; };
 		4AB38485D1A3B099C4313211DE8FC499 /* Pods-TSUserNotifications_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSUserNotifications_Example-Info.plist"; sourceTree = "<group>"; };
 		4C9961ABAEE1C3AEB4BE54846D999066 /* Pods-TSUserNotifications_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TSUserNotifications_Tests-umbrella.h"; sourceTree = "<group>"; };
 		506E806A313EAB2A2AC86B0A88A91B5C /* TSUserNotifications-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSUserNotifications-umbrella.h"; sourceTree = "<group>"; };
 		546E0ADDCE4C0C50170164B8FBFDF835 /* Pods-TSUserNotifications_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TSUserNotifications_Example.modulemap"; sourceTree = "<group>"; };
 		5552621868C3E8E6740F50BCA9248F83 /* TSUserNotificationInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TSUserNotificationInfo.swift; sourceTree = "<group>"; };
-		55B99D3B5943B7DDE80BEFB4665C984C /* TSUserNofitactionFireDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TSUserNofitactionFireDate.swift; sourceTree = "<group>"; };
 		5F05D869D3A2511E7E67B9E378AFC2D1 /* TSUserNotifications-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSUserNotifications-prefix.pch"; sourceTree = "<group>"; };
-		60217BA2F8B6BF4CF92A31D3C5CF1EA6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		60217BA2F8B6BF4CF92A31D3C5CF1EA6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6072F178C491C54C51FC7C19F673FB7C /* Pods-TSUserNotifications_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSUserNotifications_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		65224837285E40D4250F9678676D7FF1 /* TSUserNotificationCheckTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TSUserNotificationCheckTableViewCell.swift; sourceTree = "<group>"; };
 		670A066AE94F7F761EB40FAA078FE187 /* TSUserNotifications-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TSUserNotifications-dummy.m"; sourceTree = "<group>"; };
-		67A0156B61F75B2CC53B58E72667C5BB /* TSUserNotifications.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TSUserNotifications.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		67A0156B61F75B2CC53B58E72667C5BB /* TSUserNotifications.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TSUserNotifications.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6DE42C2D26E0F41A3614AE41349CB2CB /* Pods-TSUserNotifications_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSUserNotifications_Example.release.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		75CE00D0B502E593C4C46407CA288856 /* TSUserNotificationCheck.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = TSUserNotificationCheck.storyboard; sourceTree = "<group>"; };
@@ -76,7 +72,7 @@
 		8BF86271F59213347848C5F6B7A4530B /* Pods-TSUserNotifications_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSUserNotifications_Tests-Info.plist"; sourceTree = "<group>"; };
 		8E36538557DB7584EF7AA66EE69D2A49 /* TSUserNotifications */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TSUserNotifications; path = TSUserNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C0FEAD74BBF236CC273F19652A4E75 /* Pods-TSUserNotifications_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TSUserNotifications_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EB89607E8C4A8BB0288EA8D2690B8B8 /* Date+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A052AF63F94E4880B103F4D3C6BA168F /* Pods-TSUserNotifications_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TSUserNotifications_Tests"; path = Pods_TSUserNotifications_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DD860BAC165473A3050BBCD97E05EC /* Pods-TSUserNotifications_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TSUserNotifications_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -221,8 +217,6 @@
 		A7131A5F4FE388BEB0DDE7ABEA7C0B43 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				55B99D3B5943B7DDE80BEFB4665C984C /* TSUserNofitactionFireDate.swift */,
-				3F68A8A2B9C6E6627F64B57ED0E840FE /* TSUserNofitication.swift */,
 				B88E5A0E2EFD2DD4B3E447939BA4F706 /* TSUserNotification.swift */,
 				CB576BBA0164AB9BDA68ECFD1FAE867D /* TSUserNotificationFireDate.swift */,
 			);
@@ -433,8 +427,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBB04A0CA09A7CED6E1F15C12C1C162D /* Date+Extension.swift in Sources */,
-				DBE365896D1FA8C0B210F99F210728FD /* TSUserNofitactionFireDate.swift in Sources */,
-				EE299A2DF39662A8ABA63F5217DAC78F /* TSUserNofitication.swift in Sources */,
 				66BD5DCEE5C9E952A4C9D2E3435EB96F /* TSUserNotification.swift in Sources */,
 				D5ACBBCDB7692D7154D76B504677FAF5 /* TSUserNotificationCenter.swift in Sources */,
 				9879B839144B6FAD18C6B652B132BFF4 /* TSUserNotificationCenter+Notifications.swift in Sources */,

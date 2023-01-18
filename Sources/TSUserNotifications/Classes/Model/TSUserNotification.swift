@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 public struct TSUserNotification {
     var identifier: String = UUID().uuidString

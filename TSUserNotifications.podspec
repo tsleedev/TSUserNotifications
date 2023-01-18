@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TSUserNotifications'
-  s.version          = '0.9.0'
+  s.version          = '1.0.0'
   s.swift_version    = '5'
   s.summary          = 'Easy UserNotifications.'
 
