@@ -1,36 +1,51 @@
 //
-//  TSUserNotificationCheckTableViewController.swift
-//  TSFramework
+//  TSUserNotificationCheckViewController.swift
+//  
 //
-//  Created by TAE SU LEE on 2021/06/22.
+//  Created by TAE SU LEE on 2023/09/07.
 //
 
 import UIKit
 import UserNotifications
 
-class TSUserNotificationCheckTableViewController: UITableViewController {
+public class TSUserNotificationCheckViewController: UIViewController {
+    @IBOutlet private var tableView: UITableView!
     private var notifications: [TSUserNotificationInfo] = []
     
-    override func viewDidLoad() {
+    public init() {
+        super.init(nibName: nil, bundle: .module)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
+        let rightBarButtonItem = UIBarButtonItem(title: "Remove", style: .plain, target: self, action: #selector(removeAll(_:)))
+        self.navigationItem.setRightBarButton(rightBarButtonItem, animated: false)
+        
+        let nib = UINib(nibName: "TSUserNotificationCheckTableViewCell", bundle: .module)
+        tableView.register(nib, forCellReuseIdentifier: "TSUserNotificationCheckTableViewCell")
+
         setup()
     }
 }
 
 // MARK: - UITableViewDataSource
-extension TSUserNotificationCheckTableViewController {
-    override func numberOfSections(in tableView: UITableView) -> Int {
+extension TSUserNotificationCheckViewController: UITableViewDataSource {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return notifications.count
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let notification = notifications[section]
         return notification.details.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationCheckTableViewCell", for: indexPath) as! TSUserNotificationCheckTableViewCell
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TSUserNotificationCheckTableViewCell", for: indexPath) as! TSUserNotificationCheckTableViewCell
         
         let section = indexPath.section
         let row = indexPath.row
@@ -42,14 +57,14 @@ extension TSUserNotificationCheckTableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let notification = notifications[section]
         return notification.threadIdentifier
     }
 }
 
 // MARK: - Help
-private extension TSUserNotificationCheckTableViewController {
+private extension TSUserNotificationCheckViewController {
     func setup() {
         notifications.removeAll()
         
@@ -159,7 +174,7 @@ private extension TSUserNotificationCheckTableViewController {
 }
 
 // MARK: - IBAction
-private extension TSUserNotificationCheckTableViewController {
+private extension TSUserNotificationCheckViewController {
     @IBAction func removeAll(_ sender: Any) {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         setup()

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TSUserNotificationCheckTableViewCell" customModule="TSUserNotifications">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0Q-fE-NGi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vso-2B-1kj">
+                                <rect key="frame" x="22" y="10.000000000000002" width="8" height="20.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018년 2월 20일 (수요일) 11:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrS-DB-XCY">
+                                <rect key="frame" x="40" y="10.000000000000002" width="260" height="20.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="알림 문구" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3S6-2a-9LC">
+                                <rect key="frame" x="40" y="35.666666666666664" width="260" height="21.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="3S6-2a-9LC" secondAttribute="bottom" constant="5" id="1xb-ZX-IJc"/>
+                            <constraint firstAttribute="trailing" secondItem="IrS-DB-XCY" secondAttribute="trailing" constant="20" id="6mR-xq-8Fb"/>
+                            <constraint firstItem="IrS-DB-XCY" firstAttribute="top" secondItem="s0Q-fE-NGi" secondAttribute="top" constant="10" id="BcA-Et-ibq"/>
+                            <constraint firstItem="IrS-DB-XCY" firstAttribute="leading" secondItem="vso-2B-1kj" secondAttribute="trailing" constant="10" id="CIE-jh-YPD"/>
+                            <constraint firstItem="IrS-DB-XCY" firstAttribute="leading" secondItem="s0Q-fE-NGi" secondAttribute="leading" constant="40" id="FgG-l5-eNp"/>
+                            <constraint firstItem="vso-2B-1kj" firstAttribute="centerY" secondItem="IrS-DB-XCY" secondAttribute="centerY" id="LuN-2d-AKS"/>
+                            <constraint firstItem="3S6-2a-9LC" firstAttribute="top" secondItem="IrS-DB-XCY" secondAttribute="bottom" constant="5" id="VFZ-eB-8ah"/>
+                            <constraint firstItem="3S6-2a-9LC" firstAttribute="leading" secondItem="IrS-DB-XCY" secondAttribute="leading" id="YxU-jZ-6NM"/>
+                            <constraint firstAttribute="trailing" secondItem="3S6-2a-9LC" secondAttribute="trailing" constant="20" id="tLt-Va-3r7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="s0Q-fE-NGi" secondAttribute="trailing" id="2K4-Jz-cNP"/>
+                    <constraint firstItem="s0Q-fE-NGi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Xfy-6g-aVQ"/>
+                    <constraint firstAttribute="bottom" secondItem="s0Q-fE-NGi" secondAttribute="bottom" id="uL9-sv-ana"/>
+                    <constraint firstItem="s0Q-fE-NGi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vMs-9B-RxY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="messageLabel" destination="3S6-2a-9LC" id="JVY-8T-IzX"/>
+                <outlet property="numberLabel" destination="vso-2B-1kj" id="k5Q-kN-YwI"/>
+                <outlet property="timeLabel" destination="IrS-DB-XCY" id="S7P-9Q-fKQ"/>
+            </connections>
+            <point key="canvasLocation" x="140" y="21"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
