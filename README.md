@@ -43,7 +43,7 @@ Weekly repeat
 ```
 TSUserNotificationCenter.setDayOfTheWeek(identifier: "WEEK",
                                          hour: 14,
-                                         miniute: 30,
+                                         minute: 30,
                                          dayOfTheWeeks: [.sunday, .monday, .tuesday, .wednesday, .thursday, .friday, .saturday],
                                          title: "weekly repeat test",
                                          subtitle: nil,

@@ -42,10 +42,10 @@ private extension NotificationWeekTableViewController {
     @IBAction func save(_ sender: Any) {
         navigationController?.popViewController(animated: true)
         let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: datePicker.date)
-        guard let hour = components.hour, let miniute = components.minute else { return }
+        guard let hour = components.hour, let minute = components.minute else { return }
         TSUserNotificationCenter.setDayOfTheWeek(identifier: "WEEK",
                                                  hour: hour,
-                                                 miniute: miniute,
+                                                 minute: minute,
                                                  dayOfTheWeeks: selectedWeeks,
                                                  title: "weekly repeat test",
                                                  subtitle: nil,

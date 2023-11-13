@@ -31,12 +31,12 @@ private extension NotificationDayTableViewController {
                                      userInfo: nil,
                                      threadIdentifier: "DAY")
 //        let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: datePicker.date)
-//        guard let hour = components.hour, let miniute = components.minute else { return }
+//        guard let hour = components.hour, let minute = components.minute else { return }
 //        TSUserNotificationCenter.set(identifier: "DAY",
 //                                     year: components.year,
 //                                     month: components.month,
 //                                     hour: hour,
-//                                     miniute: miniute,
+//                                     minute: minute,
 //                                     repeatType: .none,
 //                                     title: "Notification test",
 //                                     subtitle: nil,

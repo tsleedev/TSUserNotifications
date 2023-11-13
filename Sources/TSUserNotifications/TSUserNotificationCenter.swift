@@ -43,13 +43,13 @@ public extension TSUserNotificationCenter {
                     threadIdentifier: String? = nil) -> Bool {
         guard let date = date else { return false }
         let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
-        guard let hour = components.hour, let miniute = components.minute else { return false }
+        guard let hour = components.hour, let minute = components.minute else { return false }
         return set(identifier: identifier,
                    year: components.year,
                    month: components.month,
                    day: components.day,
                    hour: hour,
-                   miniute: miniute,
+                   minute: minute,
                    repeatType: repeatType,
                    title: title,
                    subtitle: subtitle,
@@ -66,7 +66,7 @@ public extension TSUserNotificationCenter {
                     month: Int? = nil,
                     day: Int? = nil,
                     hour: Int,
-                    miniute: Int,
+                    minute: Int,
                     second: Int = 0,
                     repeatType: TSUserNotificationRepeatType = .none,
                     title: String? = nil,
@@ -80,7 +80,7 @@ public extension TSUserNotificationCenter {
                                                                 month: month,
                                                                 day: day,
                                                                 hour: hour,
-                                                                minute: miniute,
+                                                                minute: minute,
                                                                 second: second,
                                                                 repeatType: repeatType)
         return set(identifier: identifier,
@@ -148,7 +148,7 @@ public extension TSUserNotificationCenter {
 public extension TSUserNotificationCenter {
     static func setDayOfTheWeek(identifier: String = UUID().uuidString,
                                 hour: Int,
-                                miniute: Int,
+                                minute: Int,
                                 second: Int = 0,
                                 dayOfTheWeeks: [TSUserNotificationDayOfTheWeek],
                                 repeats: Bool = true,
@@ -166,7 +166,7 @@ public extension TSUserNotificationCenter {
         remove(identifiers: identifiers)
         if dayOfTheWeeks.count >= 7 {
             let userNofitactionFireDate = TSUserNotificationFireDate(hour: hour,
-                                                                    minute: miniute,
+                                                                    minute: minute,
                                                                     second: second,
                                                                     repeatType: .day)
             set(identifier: identifier,
@@ -183,7 +183,7 @@ public extension TSUserNotificationCenter {
         }
         dayOfTheWeeks.forEach { dayOfTheWeek in
             let userNofitactionFireDate = TSUserNotificationFireDate(hour: hour,
-                                                                    minute: miniute,
+                                                                    minute: minute,
                                                                     second: second,
                                                                     repeatType: .week,
                                                                     dayOfTheWeek: dayOfTheWeek)
