@@ -5,32 +5,48 @@
 //  Created by TAE SU LEE on 2021/06/25.
 //
 
-import UIKit
+import Foundation
 
 // MARK: Adding
 extension Date {
     func adding(days: Int) -> Date {
         var components = DateComponents()
         components.day = days
-        return Calendar.current.date(byAdding: components, to: self)!
+        guard let newDate = Calendar.current.date(byAdding: components, to: self) else {
+            assertionFailure("Failed to add \(days) days to date")
+            return self
+        }
+        return newDate
     }
-    
+
     func adding(weeks: Int) -> Date {
         var components = DateComponents()
         components.weekOfYear = weeks
-        return Calendar.current.date(byAdding: components, to: self)!
+        guard let newDate = Calendar.current.date(byAdding: components, to: self) else {
+            assertionFailure("Failed to add \(weeks) weeks to date")
+            return self
+        }
+        return newDate
     }
-    
+
     func adding(months: Int) -> Date {
         var components = DateComponents()
         components.month = months
-        return Calendar.current.date(byAdding: components, to: self)!
+        guard let newDate = Calendar.current.date(byAdding: components, to: self) else {
+            assertionFailure("Failed to add \(months) months to date")
+            return self
+        }
+        return newDate
     }
-    
+
     func adding(years: Int) -> Date {
         var components = DateComponents()
         components.year = years
-        return Calendar.current.date(byAdding: components, to: self)!
+        guard let newDate = Calendar.current.date(byAdding: components, to: self) else {
+            assertionFailure("Failed to add \(years) years to date")
+            return self
+        }
+        return newDate
     }
 }
 
@@ -38,12 +54,14 @@ extension Date {
 extension Date {
     func nextDay(from today: Date = Date()) -> Date? {
         let calendar = Calendar.current
-        let todayComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: today)
-        var dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: self)
+        let todayComponents = calendar.dateComponents(
+            [.year, .month, .day, .hour, .minute], from: today)
+        var dateComponents = calendar.dateComponents(
+            [.year, .month, .day, .hour, .minute], from: self)
         dateComponents.year = todayComponents.year
         dateComponents.month = todayComponents.month
         dateComponents.day = todayComponents.day
-        
+
         if let tmpDate = calendar.date(from: dateComponents) {
             if calendar.compare(today, to: tmpDate, toGranularity: .second) == .orderedDescending {
                 dateComponents.day! += 1
@@ -51,36 +69,42 @@ extension Date {
         }
         return calendar.date(from: dateComponents)
     }
-    
+
     func nextWeek(from today: Date = Date()) -> Date? {
         let calendar = Calendar.current
-        var todayComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .weekday], from: today)
-        let dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .weekday], from: self)
-        
-        todayComponents.day = todayComponents.day! + (dateComponents.weekday! - todayComponents.weekday!)
+        var todayComponents = calendar.dateComponents(
+            [.year, .month, .day, .hour, .minute, .weekday], from: today)
+        let dateComponents = calendar.dateComponents(
+            [.year, .month, .day, .hour, .minute, .weekday], from: self)
+
+        todayComponents.day =
+            todayComponents.day! + (dateComponents.weekday! - todayComponents.weekday!)
         todayComponents.hour = dateComponents.hour
         todayComponents.minute = dateComponents.minute
-        
+
         if let tmpDate = calendar.date(from: todayComponents) {
             if calendar.compare(today, to: tmpDate, toGranularity: .second) == .orderedDescending {
                 todayComponents.day! += 7
             }
         }
-        
+
         return calendar.date(from: todayComponents)
     }
-    
+
     func nextMonth(from today: Date = Date()) -> Date? {
         let calendar = Calendar.current
-        var todayComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: today)
-        var dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: self)
+        var todayComponents = calendar.dateComponents(
+            [.year, .month, .day, .hour, .minute], from: today)
+        var dateComponents = calendar.dateComponents(
+            [.year, .month, .day, .hour, .minute], from: self)
         dateComponents.year = todayComponents.year
         dateComponents.month = todayComponents.month
-        
+
         if let tmpDate = calendar.date(from: dateComponents) {
             let month = calendar.component(.month, from: tmpDate)
-            if month != dateComponents.month! ||
-                calendar.compare(today, to: tmpDate, toGranularity: .second) == .orderedDescending {
+            if month != dateComponents.month!
+                || calendar.compare(today, to: tmpDate, toGranularity: .second)
+                    == .orderedDescending {
                 todayComponents.month! += 1
                 todayComponents.day = 1
                 todayComponents.hour = 0
@@ -93,17 +117,20 @@ extension Date {
         }
         return nil
     }
-    
+
     func nextYear(from today: Date = Date()) -> Date? {
         let calendar = Calendar.current
-        var todayComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: today)
-        var dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: self)
+        var todayComponents = calendar.dateComponents(
+            [.year, .month, .day, .hour, .minute], from: today)
+        var dateComponents = calendar.dateComponents(
+            [.year, .month, .day, .hour, .minute], from: self)
         dateComponents.year = todayComponents.year
-        
+
         if let tmpDate = calendar.date(from: dateComponents) {
             let month = calendar.component(.month, from: tmpDate)
-            if month != dateComponents.month! ||
-                calendar.compare(today, to: tmpDate, toGranularity: .second) == .orderedDescending {
+            if month != dateComponents.month!
+                || calendar.compare(today, to: tmpDate, toGranularity: .second)
+                    == .orderedDescending {
                 todayComponents.year! += 1
                 todayComponents.month = 1
                 todayComponents.day = 1

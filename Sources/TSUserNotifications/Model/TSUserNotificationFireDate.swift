@@ -16,15 +16,17 @@ public struct TSUserNotificationFireDate {
     private var second: Int?
     private var repeatType: TSUserNotificationRepeatType = .none
     private var dayOfTheWeek: TSUserNotificationDayOfTheWeek?
-    
-    init(year: Int? = nil,
-         month: Int? = nil,
-         day: Int? = nil,
-         hour: Int? = nil,
-         minute: Int? = nil,
-         second: Int? = nil,
-         repeatType: TSUserNotificationRepeatType = .none,
-         dayOfTheWeek: TSUserNotificationDayOfTheWeek? = nil) {
+
+    public init(
+        year: Int? = nil,
+        month: Int? = nil,
+        day: Int? = nil,
+        hour: Int? = nil,
+        minute: Int? = nil,
+        second: Int? = nil,
+        repeatType: TSUserNotificationRepeatType = .none,
+        dayOfTheWeek: TSUserNotificationDayOfTheWeek? = nil
+    ) {
         self.year = year
         self.month = month
         self.day = day
