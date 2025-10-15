@@ -43,16 +43,20 @@ private extension NotificationWeekTableViewController {
         navigationController?.popViewController(animated: true)
         let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: datePicker.date)
         guard let hour = components.hour, let minute = components.minute else { return }
-        TSUserNotificationCenter.setDayOfTheWeek(identifier: "WEEK",
-                                                 hour: hour,
-                                                 minute: minute,
-                                                 dayOfTheWeeks: selectedWeeks,
-                                                 title: "weekly repeat test",
-                                                 subtitle: nil,
-                                                 body: "it's a test.",
-                                                 badge: nil,
-                                                 sound: nil,
-                                                 userInfo: nil,
-                                                 threadIdentifier: "WEEK")
+        Task {
+            await TSUserNotificationCenter.setDayOfTheWeek(
+                identifier: "WEEK",
+                hour: hour,
+                minute: minute,
+                dayOfTheWeeks: selectedWeeks,
+                title: "weekly repeat test",
+                subtitle: nil,
+                body: "it's a test.",
+                badge: nil,
+                sound: nil,
+                userInfo: nil,
+                threadIdentifier: "WEEK"
+            )
+        }
     }
 }
