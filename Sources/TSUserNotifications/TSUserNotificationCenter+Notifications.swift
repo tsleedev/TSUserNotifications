@@ -29,15 +29,15 @@ public extension TSUserNotificationCenter {
 
     static func set(notifications: [TSUserNotification], max: Int = maxPendingNotifications) {
         guard max > 0 else {
-            assertionFailure("The max must be greater than 0.")
+            print("The max must be greater than 0.")
             return
         }
         guard max <= maxPendingNotifications else {
-            assertionFailure("The max must be \(maxPendingNotifications) or less.")
+            print("The max must be \(maxPendingNotifications) or less.")
             return
         }
         guard !notifications.isEmpty else {
-            assertionFailure("Notifications array cannot be empty.")
+            print("Notifications array cannot be empty.")
             return
         }
 
